@@ -57,12 +57,14 @@
                 });
                 </script>
             </form>
+            action="https://sheetdb.io/api/v1/mmzbp71otf8b2" method="post" id="sheetdb-form" 
+            name="data[email]"
             -->
 
-            <div class="email-form">
-                <input type="text" id="email" placeholder="Enter your email">
-                <button type="submit" onclick="updateValues()">Subscribe ➜</button>
-            </div>
+            <form class="email-form">
+                <input name="email" type="text" id="email"  placeholder="Enter your email" autocomplete="email">
+                <button  id="subscribe" type="submit">Subscribe ➜</button>
+            </form>
         </div>
         <div class="graphic">
             <img src="images/how-to.png" alt="Graphic Image">
@@ -138,6 +140,9 @@
         
         </div>
     </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const hamburgerButton = document.getElementById("hamburger");
@@ -160,10 +165,7 @@
                     mobileLinks.style.display = "none";
                 }
             });
-        });
 
-
-        document.addEventListener("DOMContentLoaded", function () {
             const faqs = document.querySelectorAll(".faq");
 
             faqs.forEach(function (faq) {
@@ -183,9 +185,51 @@
                     faqTitle.classList.toggle("expanded-padding");
                 });
             });
+
+            const emailInput = document.getElementById("email");
+            emailInput.addEventListener("keydown", function (event) {
+                console.log('1')
+                // Check if the pressed key is Enter (key code 13)
+                if (event.key === "Enter") {
+                    console.log('2')
+                    // Prevent the default form submission
+                    event.preventDefault();
+                    // Trigger the XHR request
+                    submitXHRRequest();
+                }
+            });
         });
+
+
+        $("#subscribe").click(function(){
+            submitXHRRequest();
+        })
+
+        function submitXHRRequest() {
+            const url = 'https://script.google.com/macros/s/AKfycbyW1n1j5vYy4rGz5tWcoO4_nOOCRbSTKhKZI7tnUOfm9dspYnJqgx4BJdQFOx8bEiRhSw/exec';
+                const jsonData = {email: $("#email").val(),
+            };
+            console.log(jsonData)
+            // Convert the JavaScript object to a JSON string
+            const jsonString = JSON.stringify(jsonData);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log('Success:', xhr.responseText);
+                } else if (xhr.readyState == 4) {
+                    console.error('Error:', xhr.status);
+                }
+            };
+
+            xhr.send(jsonString);
+        }
+
     </script>
-
-
+    
 
 </body>
+</html>
