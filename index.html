@@ -45,25 +45,10 @@
             <p class="text-1">Paayj let's you temporarily combine cards to split purchases <b style="font-weight: 600;">for free</b>. Select your debit cards, credit cards, and even invite friends to Paayj with you!</p>
             <p class="text-2">Paayj is coming soon! 🚀 Sign up to stay in the loop.</p>
 
-            <!--HUBSPOT form
-            <form class="email-form">
-                <style type="text/css">#email-1b28140b-e32b-42fc-9a39-aff6f3a4eac7{background-color:#fff;border:2px solid #fff;border-radius:50px;padding:1rem 2rem 1rem 10px;width:100%;height:100%}.hs-button.primary.large{background-color:pink;color:black;border:none;border-radius:50px;padding:.5rem .5rem;font-size:1rem;width:auto;height:auto;position:absolute;right:0;-webkit-transform:translateX(-5%);-ms-transform:translateX(-5%);transform:translateX(-5%);top:15%}.hs-button.primary.large:hover{background-color:#eea9cb;-webkit-transform:translateX(-10%);-ms-transform:translateX(-10%);transform:translateX(-10%)}.hs-button.primary.large:active{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}</style>
-                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-                <script>
-                hbspt.forms.create({
-                    region: "na1",
-                    portalId: "43911154",
-                    formId: "1b28140b-e32b-42fc-9a39-aff6f3a4eac7"
-                });
-                </script>
-            </form>
-            action="https://sheetdb.io/api/v1/mmzbp71otf8b2" method="post" id="sheetdb-form" 
-            name="data[email]"
-            -->
-
             <form class="email-form">
                 <input name="email" type="text" id="email"  placeholder="Enter your email" autocomplete="email">
                 <button  id="subscribe" type="submit">Subscribe ➜</button>
+                <p id="thanks" style="display: none;">Thanks you! Your submission has been received</p>
             </form>
         </div>
         <div class="graphic">
@@ -187,11 +172,16 @@
             });
 
             const emailInput = document.getElementById("email");
+            const subscribe = document.getElementById("subscribe");
+            subscribe.addEventListener("click", function (e) { 
+                e.preventDefault(); //stop page reloading
+                submitXHRRequest();
+                emailInput.value=""
+            });
+
             emailInput.addEventListener("keydown", function (event) {
-                console.log('1')
                 // Check if the pressed key is Enter (key code 13)
                 if (event.key === "Enter") {
-                    console.log('2')
                     // Prevent the default form submission
                     event.preventDefault();
                     // Trigger the XHR request
@@ -200,11 +190,6 @@
                 }
             });
         });
-
-
-        $("#subscribe").click(function(){
-            submitXHRRequest();
-        })
 
         function submitXHRRequest() {
             const url = 'https://script.google.com/macros/s/AKfycbyW1n1j5vYy4rGz5tWcoO4_nOOCRbSTKhKZI7tnUOfm9dspYnJqgx4BJdQFOx8bEiRhSw/exec';
@@ -227,6 +212,9 @@
             };
 
             xhr.send(jsonString);
+            const thanks = document.getElementById("thanks")
+            thanks.style.display="block"
+
         }
 
     </script>
