@@ -1,80 +1,853 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+
+<!doctype html>
+<html>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paayj</title>
-    <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,200,300,600,900&family=Source+Sans+Pro:wght@100,400,700&display=swap' rel='stylesheet'>
-</head>
+    <link rel="icon" href="https://images.squarespace-cdn.com/content/651b88393b04c9511c531be1/15ae9e2f-87c2-4823-88dd-946d5246ed5d/transparent-Icon-Light.png?content-type=image%2Fpng">
+  </head>
 
-<body>
-    <header>
-        <div class="logo">
-            <img src="images/Logo-Dark.png" alt="Logo">
-        </div>
-                
-        <nav class="desktop-nav">
-            <ul>
-                <!--<li><a href="#">Features</a></li>-->
-                <!--<li><a href="#">Pricing</a></li>-->
-                <li><a href="#faqSection">FAQ</a></li>
-            </ul>
-        </nav>
-        <div class="mobile-nav">
-            <button class="hamburger" id="hamburger">&#9776;</button>
-            <div class="mobile-links" id="mobileLinks">
+  <body>
+      <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 100;
+            color: gray;
+        }
+
+        body {
+            background-color: #F2F7FE;
+        }
+
+        /*HEADER*//*HEADER*//*HEADER*/
+        /*HEADER*//*HEADER*//*HEADER*/
+        header {
+            background-color: #F2F7FE;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 30px;
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc; 
+
+        }
+        .logo img {
+            max-width: 100px; 
+            margin-left: 30px;
+        }
+
+        /*desktop header buttons*/
+        .desktop-nav { 
+            flex-grow: 1; 
+            margin-left: 100px;
+        }
+        .desktop-nav ul {
+            list-style: none;
+            display: flex;
+        }
+        .desktop-nav li {
+            margin-right: 50px;
+            font-weight: bold;
+        }
+        .desktop-nav a {
+            text-decoration: none;
+            color: #170034;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: bolder;
+        }
+
+        /*mobile header buttons*/
+        .mobile-nav {
+            display: none; /* Hide by default */
+            align-items: center;
+        }
+        .hamburger {
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+            z-index: 1; 
+            position: relative; /* Position relative to parent */
+        }
+        .mobile-links {
+            display: none;
+            flex-direction: column;
+            z-index: 2; 
+            position: absolute; 
+            background-color: #fff;
+            top: 4%; /*below hamburger button*/
+            right: 0;
+            margin-top: 5px;
+            padding: 20px;
+        }
+        .mobile-links ul {
+            list-style: none;
+        }
+        .mobile-links li {
+            margin: 10px 0;
+        }
+
+
+        .app-buttons-1 {
+            margin-top: 10px;
+            display: flex;
+            gap: 30px;
+            flex: end;
+        }
+
+        .app-buttons-1 img {
+            max-width: 100px;
+            max-height: 30px;
+            border-radius: 8px;
+        }
+
+
+
+        /*PARENT DIV; children: email-capture, graphic*/
+        /*PARENT DIV; children: email-capture, graphic*/
+        /*PARENT DIV; children: email-capture, graphic*/
+        .main-1 {
+            display: flex;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        /*Desktop - left*//*Desktop - left*//*Desktop - left*/
+        /*Desktop - left*//*Desktop - left*//*Desktop - left*/
+        .main-1 > .email-capture {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            width: 50%; 
+            margin-right: 20px; 
+            padding-left: 10%;
+            padding-right: 0;
+        }
+
+        .main-1 > .email-capture h1, p, form {
+            text-align: left;
+        }
+
+        .main-1 > .email-capture h1 {
+            font-size: 3rem; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            color: #170034;
+            font-family: 'Montserrat Alternates', sans-serif;
+        }
+
+        .main-1 > .email-capture > .text-1 { 
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-right: 50px;
+            line-height: 1.6;
+        }
+
+        .main-1 > .email-capture > .text-2 {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .main-1 > .email-capture > .email-form {
+          width: 100%;
+          position: relative;
+          height: 60px;
+          }
+
+        .main-1 > .email-capture > .email-form input {
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            width: 100%;
+            height: 100%;
+            padding-left: 10px;
+        }
+
+        .main-1 > .email-capture > .email-form button {
+            background-color: pink;
+            color:  #170034;
+            border: none;
+            border-radius: 50px;
+            height: 80%;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: absolute;
+            right: 0;
+            transform: translateX(-5%);
+            top: 10%;
+          }
+          .main-1 > .email-capture > .email-form button:hover {
+            background-color: rgb(238, 169, 203); 
+            transform: translateX(-10%);
+        }
+        .main-1 > .email-capture > .email-form button:active {
+            transform: translateX(0); 
+        }
+
+        /*Desktop - right*//*Desktop - right*//*Desktop - right*/
+        /*Desktop - right*//*Desktop - right*//*Desktop - right*/
+        .main-1 > .graphic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            height: auto;
+            margin-right: 10%;
+            margin-top: 2%;
+        }
+        .main-1 >.graphic img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* tablet layout */
+        @media (min-width: 769px) and (max-width: 1050px) {
+            .main-1 > .email-capture {
+                margin-left: 10px;
+                padding-left: 10px;
+                padding-top: 20px;
+                width: 50%;
+            }
+            .main-1 > .graphic {
+                margin-right: 10px;
+                width: 50%;
+            }
+        }
+
+
+
+        /*PARENT: main-2; children: explain-text, graphic-2
+        /*PARENT: main-2; children: explain-text, graphic-2
+        /*PARENT: main-2; children: explain-text, graphic-2
+        .main-2 {
+            background-color: #FEFEDD; 
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 40px;
+            border-radius: 100px;
+        }
+        /*Desktop - left*//*Desktop - left*//*Desktop - left*//*Desktop - left
+        /*Desktop - left*//*Desktop - left*//*Desktop - left*//*Desktop - left
+        .main-2 .explain-text {
+            flex: 1;
+            text-align: left; 
+            padding-left: 3%;
+            padding-right: 3%;
+            padding-top: 5%;
+            margin-top: 10px;
+        }
+
+        .main-2 .explain-text h1 {
+            font-size: 2rem; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+        }
+
+        .main-2 .explain-text .text-3, .text-4, .text-5 {
+            margin-top: 10px;
+        }
+        .main-2 .explain-text .bullet-list-1 {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        .main-2 .explain-text .text-6, .text-7 {
+            margin-top: 30px;
+        }
+
+
+        /*Desktop - right*//*Desktop - right*//*Desktop - right
+        /*Desktop - right*//*Desktop - right*//*Desktop - right
+        .main-2 .graphic-2 {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end; 
+            padding-right: 2%;
+            width: 100%;
+            height: auto;
+            align-items: center;
+        }
+
+        .main-2 .graphic-2 img {
+            max-width: 100%;
+            max-height: 80%;
+        }
+
+        /*PARENT: main-2; children: step-text, step-img*/
+        /*PARENT: main-2; children: step-text, step-img*/
+        /*PARENT: main-2; children: step-text, step-img
+        .main-2 {
+            background-color: #FEFEDD; 
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 40px;
+            border-radius: 100px;
+        }
+        /*Desktop - left*//*Desktop - left*//*Desktop - left*//*Desktop - left*/
+        /*Desktop - left*//*Desktop - left*//*Desktop - left*//*Desktop - left
+        .main-2 .step-text {
+            flex: 1;
+            text-align: left; 
+            padding-left: 3%;
+            padding-right: 3%;
+            padding-top: 5%;
+            margin-top: 10px;
+        }
+
+        .main-2 .step-text h1 {
+            font-size: 2rem; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+        }
+
+        .main-2 .step-text .step{
+            padding: 30px;
+        }
+
+        .main-2 .step.selected {
+            background-color: #007acc; 
+            color: #fff; 
+        }
+        
+
+        .main-2 .explain-text .text-6, .text-7 {
+            margin-top: 30px;
+        }
+
+
+        /*Desktop - right*//*Desktop - right*//*Desktop - right*/
+        /*Desktop - right*//*Desktop - right*//*Desktop - right
+        .main-2 .step-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding-right: 2%;
+            width: 100%;
+            max-height: 70%;
+            height: auto;
+            align-items: center;
+            line-height: 0;
+        }
+
+        .main-2 .step-img img {
+            max-width: 100%;
+            max-height: 70%;
+        }
+
+
+        .main-2 .step-img #step-2-img,#step-3-img {
+            display: none;
+        }
+
+
+        /*PARENT: main-4; children: desktop-layout (left-content, right content), mobile-layout (content-blocks)*/
+        /*PARENT: main-4; children: desktop-layout (left-content, right content), mobile-layout (content-blocks)*/
+        /*PARENT: main-4; children: desktop-layout (left-content, right content), mobile-layout (content-blocks)*/
+        .main-4 {
+            width: 80%;            
+            margin: 0 auto;     
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px;;
+        }
+        .main-4 > h1 {
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 2 rem; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            color: #170034;
+            margin: 0;
+        }
+
+        .desktop-layout {
+            display: flex;
+            justify-content: center; 
+            align-items: center;   
+            width: 100%;
+        }
+
+        .mobile-layout {
+            display: none;
+        }
+
+        .left-content, .right-content {
+            width: 50%;
+            padding: 20px;
+            display: flex;         /* Using flex to make sure content is centered */
+            flex-direction: column;
+            align-items: center;   /* Centering the content */
+            justify-content: center;
+        }
+
+        .left-content > img, .right-content > img {
+            width: 60%;            /* Updated width based on your requirement */
+            margin-bottom: 60px;
+        }
+
+        .text-block {
+            margin-bottom: 40px
+        }
+        .block-title {
+            font-weight: bold;     
+            color: #170f49;
+            font-family: 'Montserrat Alternates', sans-serif;
+            margin-bottom: 20px;
+        }
+        .block-text {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .desktop-layout #third {
+            margin-bottom: 0;
+        }
+        .desktop-layout #fourth {
+            margin-bottom: 30px;
+        }
+
+        /*PARENT: main-3; children: faq(s)*/
+        /*PARENT: main-3; children: faq(s)*/
+        /*PARENT: main-3; children: faq(s)*/
+        .main-3 {
+            width: 60%; /* Desktop width */
+            margin: 0 auto; /* Center horizontally */
+            padding-top: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 40px;
+        }
+
+        .main-3 > h1 {
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 2 rem; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            text-align: center;
+            color: #170034;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+
+        .main-3 .faq {
+            background-color: white;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+       
+        .main-3 .faq .faq-title {
+            display: flex;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            padding-top: 30px;
+            color: #170f49
+        }
+
+         .main-3 .faq.expanded {
+            border-color: rgb(194, 61, 194);
+        }
+        .main-3 .faq.expanded .faq-title {
+            padding-bottom: 10px; 
+        }
+
+        .main-3 .faq .question {
+            margin: 0;
+            display: inline-block;
+            width: 90%;
+            font-weight: 600;
+            color: black;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: small;
+        }
+        .main-3 .faq .arrow {
+            display: inline-block;
+            width: 10%;
+            text-align: right;
+        }
+
+        .answer {
+            display: none;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            line-height: 1.6;
+            color: #646c90;
+        }
+
+        /*PARENT: closer; children: closer-1, closer-2*/
+        /*PARENT: closer; children: closer-1, closer-2*/
+        /*PARENT: closer; children: closer-1, closer-2*/
+        .closer {
+            background-color: #170134;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 100px;
+            color: white;
+        }
+
+        .closer-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            padding-left: 5%;
+            gap: 10px;
+            height: 100%;
+
+        }
+
+        .closer-1 img {
+            max-width: 100px;
+            margin-right: 20px; 
+        }
+
+        .desktop-nav-1 { 
+            flex-grow: 1; 
+            
+        }
+        .desktop-nav-1 ul {
+            list-style: none;
+            display: flex;
+        }
+        .desktop-nav-1 li {
+            margin-right: 20px;
+        }
+        .desktop-nav-1 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .closer-1 p {
+            color: white;
+            font-size: 12px;
+        }
+
+        /* Styling for the right child div */
+        .closer-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            color: white;
+            padding-right: 5%;
+        }
+
+        .closer-2 h7 {
+            font-size: 14px; 
+        }
+
+        .app-buttons {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .app-buttons a {
+            display: inline-block;
+            margin-right: 10px; /* Adjust spacing between buttons */
+        }
+
+        .app-buttons img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* mobile layout *//* mobile layout *//* mobile layout */
+        @media (max-width: 768px) {
+            /*header*//*header*//*header*/
+            header{
+                padding: 15px;
+            }
+            .desktop-nav, .app-buttons-1 { /*desktop header buttons*/
+                display: none; 
+            }
+            .mobile-nav { /*mobile header buttons*/
+                display: flex;
+            }
+
+            /*PARENT DIV: main-1; children: email-capture, graphic*/
+            .main-1 {
+                flex-direction: column; /* Reverse the order on mobile */
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                padding-top: 0px;
+            }
+            .main-1 > .email-capture {
+                width: 100%; 
+                margin-right: 0; 
+                padding-left: 10%;
+                padding-right: 10%;
+                text-align: center;
+                padding-top: 5%;
+            }
+            .main-1 > .email-capture h1, p, form {
+                text-align: center;
+            }
+            .main-1 > .email-capture h1 {
+                font-size: 2rem;
+            }
+            .text-1, .text-2 {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+            .main-1 > .graphic {
+                width: 80%; /* Takes 50% of the mobile screen */
+                height: auto; /* Maintain aspect ratio */
+                margin: 0;
+                padding: auto;
+                padding-top: 40px;
+                align-items: center;
+            }
+
+            /*PARENT: main-2; children: explain-text, graphic-2*/
+            .main-2 {
+                width: 100%;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            .main-2 > .graphic-2 {
+                margin: 10%;
+                margin-top: 5%;
+                max-height: 50%;
+                max-width: 50%;
+
+            }
+
+            .text-3, .text-4, .text-5 {
+                text-align: left;
+            }
+
+            /*parent: main-4; children: desktop-layout, mobile-layout*/
+            .main-4 > h1 {
+                margin-bottom: 20px;;
+            }
+
+            .desktop-layout {
+                display: none;
+            }
+
+            .mobile-layout {
+                width: 100%;
+                display: block;
+            }
+
+            .mobile-layout .block-text {
+                text-align: left;
+            }
+
+            .mobile-layout > img {
+                width: 85%;  
+                margin-bottom: 60px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .mobile-layout .block-title {
+                text-align: center;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+          
+            /*PARENT: main-3; children: faq(s)*/
+            .main-3 {
+                width: 95%; /* Mobile width */
+                margin: 0 2.5%;
+            }
+
+            .faq > .answer {
+                text-align: left;
+            }
+            
+            /*PARENT: closer; children: closer-1, closer-2*/
+            .closer {
+                flex-direction: column; /* Display children vertically for mobile */
+                align-items: left; /* Center align children for mobile */
+                padding-top: 40px;
+                padding-bottom: 40px;
+                padding-left: 10%;
+            }
+
+            .closer-1 {
+                padding: 0;
+                text-align: left;
+            }
+
+            .closer-1 .copy {
+                max-width: 100%;
+                padding: 0;
+                text-align: left;
+            }
+
+            .closer-2 {
+                margin-top: 50px;
+            }
+        }
+      </style>
+      <header>
+            <div class="logo">
+                <img src="images/Logo-Dark.png" alt="Logo">
+            </div>
+
+            <nav class="desktop-nav">
                 <ul>
                     <!--<li><a href="#">Features</a></li>-->
-                    <!--<li><a href="#">Pricing</a></li>-->
+                    <li><a href="#how-it-works">About</a></li>
                     <li><a href="#faqSection">FAQ</a></li>
                 </ul>
+            </nav>
+            <div class="mobile-nav">
+                <button class="hamburger" id="hamburger">&#9776;</button>
+                <div class="mobile-links" id="mobileLinks">
+                    <ul>
+                        <!--<li><a href="#">Features</a></li>-->
+                        <li><a href="#how-it-works">About</a></li>
+                        <li><a href="#faqSection">FAQ</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
+            <div class="app-buttons-1">
+                <a href="#"><img src="images/cs-app-store.jpeg" alt="App Store"></a>
+                <a href="#"><img src="images/cs-google-play.png" alt="Google Play"></a>
+            </div>
 
-        <div class="app-buttons-1">
-            <a href="#"><img src="images/cs-app-store.jpeg" alt="App Store"></a>
-            <a href="#"><img src="images/cs-google-play.png" alt="Google Play"></a>
-        </div>
-
-    </header>
-    <div class="main-1">
-        <div class="email-capture">
-            <h1 style="font-family: 'Montserrat Alternates', sans-serif;">the smoothest way to split bills</h1>
-            <p class="text-1">Paayj let's you temporarily combine cards to split purchases <b style="font-weight: 600;">for free</b>. Select your debit cards, credit cards, and even invite friends to Paayj with you!</p>
-            <p class="text-2">Paayj is coming soon! 🚀 Sign up to stay in the loop.</p>
+      </header>
+      <div class="main-1">
+          <div class="email-capture">
+              <h1>the card to split bills with one swipe</h1>
+              <p class="text-1">Paayj is a virtual card that instantly splits bills by charging multiple linked cards when swiped. Select your debit cards, credit cards, and even invite friends to Paayj with you!</p>
+              <p class="text-2">Paayj is coming soon! 🚀 Sign up to stay in the loop.</p>
 
             <form class="email-form">
-                <input name="email" type="text" id="email"  placeholder="Enter your email" autocomplete="email">
-                <button  id="subscribe" type="submit">Subscribe ➜</button>
+                <input type="text" id="email"  placeholder="Enter your email">
+                <button type="submit" id="subscribe" >Join Waitlist ➜</button>
                 <p id="thanks" style="display: none;">Thanks you! Your submission has been received</p>
             </form>
+
+          </div>
+          <div class="graphic">
+              <img src="images/card.png" alt="Graphic Image">
+          </div>
+      </div>
+
+
+      <div class="main-4" id="how-it-works">
+        <h1>How it works</h1>
+        <!-- Desktop Layout -->
+        <div class="desktop-layout">
+          <div class="left-content">
+            <div class="text-block" id="first">
+                <h2 class="block-title" id="first-block-title">Swipe, Split, Stop Chasing Down Venmo’s</h2>
+                <p class="block-text">When you swipe with Paayj card, everyone's linked cards are directly charged their fair share.</p>
+                <p class="block-text">Instantly split the restaurant bill or bar tab with your friends - no card fronts the entire charge. With Paayj, you can also split purchases between your own cards. </p>
+                <p class="block-text">Split household expenses with your significant other, groceries with your roommate, or use Paayj to keep track and split charges when traveling with friends.</p>
+            </div>
+            <img src="images/send-request.png" alt="Second UX Image">
+            <h2 class="block-title" id="third">Welcome Paayj,</h2>
+            <h2 class="block-title" id="fourth">Goodbye IOU's</h2>
+            <img src="images/wallet.png" alt="wallet image">
+          </div>
+      
+          <div class="right-content">
+            <img src="images/create-split.png" alt="First UX Image">
+            <div class="text-block" id="second">
+                <h2 class="block-title" id="second-block-title">Tailor Your Splits, Your Way</h2>
+                <p class="block-text">Set your rules, and decide how you want to split the charge - with friends or by yourself. Whether solo or with the squad, split smartly with Paayj.</p>
+                <p class="block-text">Send your friends a split request and after everyone accepts you will all have the Paayj card upload to your Apple wallet.</p>
+            </div>
+            <img src="images/pay.png" alt="Third UX Image" style="margin-bottom: 0;">
+          </div>
         </div>
-        <div class="graphic">
-            <img src="images/how-to.png" alt="Graphic Image">
+      
+        <!-- Mobile Layout -->
+        <div class="mobile-layout">
+            <div class="text-block" id="first">
+                <h2 class="block-title" id="first-block-title">Swipe, Split, Stop Chasing Down Venmo’s</h2>
+                <p class="block-text">When you swipe with Paayj card, everyone's linked cards are directly charged their fair share.</p>
+                <p class="block-text">Instantly split the restaurant bill or bar tab with your friends - no card fronts the entire charge. With Paayj, you can also split purchases between your own cards. </p>
+                <p class="block-text">Split household expenses with your significant other, groceries with your roommate, or use Paayj to keep track and split charges when traveling with friends.</p>
+            </div>
+            <img src="images/create-split.png" alt="First UX Image">
+            <div class="text-block" id="second">
+                <h2 class="block-title" id="second-block-title">Tailor Your Splits, Your Way</h2>
+                <p class="block-text">Set your rules, and decide how you want to split the charge - with friends or by yourself. Whether solo or with the squad, split smartly with Paayj.</p>
+                <p class="block-text">Send your friends a split request and after everyone accepts you will all have the Paayj card upload to your Apple wallet.</p>
+            </div>
+            <img src="images/send-request.png" alt="Second UX Image">
+            <h2 class="block-title" id="third">Welcome Paayj, Goodbye IOU's</h2>
+            <img src="images/pay.png" alt="Third UX Image">
         </div>
     </div>
-
-    <div class="main-2">
-        <div class="step-text">
-            <h1>Split with your Friends!</h1>
-            <h3 class="step" id="step-1">Step 1: Create a new split</h3>
-            <h3 class="step" id="step-2">Step 2: Send your friends a request to join your new split</h3>
-            <h3 class="step" id="step-3">Step 3: Pay with Paayj!</h3>
-            <p class="text-6">Make a group, add your friends, and start splitting</p>
-            <p class="text-7"><em>It's as easy as that</em></p>
+      
+        <!--
+        <div class="main-2">
+            <div class="step-text">
+                <h1>Split with your Friends!</h1>
+                <h3 class="step" id="step-1">Step 1: Create a new split</h3>
+                <h3 class="step" id="step-2">Step 2: Send your friends a request to join your new split</h3>
+                <h3 class="step" id="step-3">Step 3: Pay with Paayj!</h3>
+                <p class="text-6">Make a group, add your friends, and start splitting</p>
+                <p class="text-7"><em>It's as easy as that</em></p>
+            </div>
+            <div class="step-img">
+                <img id="step-1-img" src="images/create-split.png" alt="Graphic Image 1">
+                <img id="step-2-img" src="images/send-request.png" alt="Graphic Image 2">
+                <img id="step-3-img" src="images/pay.png" alt="Graphic Image 3">
+            </div>
         </div>
-        <div class="step-img">
-            <img id="step-1-img" src="images/create-split.png" alt="Graphic Image 1">
-            <img id="step-2-img" src="images/send-request.png" alt="Graphic Image 2">
-            <img id="step-3-img" src="images/pay.png" alt="Graphic Image 3">
-        </div>
-    </div>
-    
-
-
-    <div class="main-3" id="faqSection">
+        --> 
+      <!--
+      <div class="main-2">
+          <div class="explain-text">
+              <h1>pay together, slay together</h1>
+              <p class="text-3">We make it simple for you to share expenses. Let the app do the splitting for you. Rent, subscriptions, dinner, furniture. No more...</p>
+              <ul class="bullet-list-1">
+                  <li>chasing down friends</li>
+                  <li>fronting the airBnBs, the concert tickets</li>
+                  <li>saving receipts and doing complicated math</li>
+              </ul>
+              <p class="text-6">Add friends, make a group, and start splitting</p>
+              <p class="text-7"><em>It's as easy as that</em></p>
+          </div>
+          <div class="graphic-2">
+              <img src="graphic.png" alt="Graphic Image">
+          </div>
+      </div>-->
+      <div class="main-3" id="faqSection">
+        <h1>Frequently Asked Questions</h1>
         <div class="faq">
             <div class="faq-title">
                 <h2 class="question">How does Paayj work?</h2>
@@ -87,172 +860,157 @@
                 <h2 class="question">Does everyone in my group need to have the app?</h2>
                 <div class="arrow">▶</div>
             </div>
-            <p class="answer">Nope! You can send your friends a web link that allows them to quickly link their card</p>
-        </div>
-        <div class="faq">
-            <div class="faq-title">
-                <h2 class="question">Where can i use my Paayj card?</h2>
-                <div class="arrow">▶</div>
-            </div>
-            <p class="answer">Anywhere in the world that accepts Visa!</p>
+            <p class="answer">Nope! You can send your friends a web link that allows them to quickly link their card.</p>
         </div>
         <div class="faq">
             <div class="faq-title">
                 <h2 class="question">How do I invite others to join a payment group or transaction?</h2>
                 <div class="arrow">▶</div>
             </div>
-            <p class="answer">You can simply send your friends a link to join or if you both have the paayj app you can tap your phones together to be added the a group</p>
+            <p class="answer">You can simply send your friends a link to join or if you both have the paayj app you can tap your phones together to be added the a group.</p>
         </div>
-        <div class="faq">
-            <div class="faq-title">
-                <h2 class="question">Will I have one card in my mobile wallet for each group I am in?</h2>
-                <div class="arrow">▶</div>
-            </div>
-            <p class="answer">No! You will only have one Paayj card in your mobile wallet. What group is active on the card can be controlled from the app.</p>
-        </div>
-    </div>
-    <footer class="closer">
-        <div class="closer-1">
-            <img src="images/Logo-TextOnly-Light.png" alt="Logo">
-            <nav class="desktop-nav-1">
-                <ul>
-                    <!--<li><a href="#">Features</a></li>-->
-                    <!--<li><a href="#">Pricing</a></li>-->
-                    <li><a href="#faqSection">FAQ</a></li>
-                </ul>
-            </nav>
-
-            <p class="copy">&copy; 2023 Paayj. All rights reserved.</p>
-        </div>
-        <div class="closer-2">
-            <!--
-            <h4>Get the App</h4>-->
-            <div class="app-buttons">
+      </div>
+      <footer class="closer">
+          <div class="closer-1">
+              <img src="images/Logo-TextOnly-Light.png" alt="Logo">
+              
+              <nav class="desktop-nav-1">
+                  <ul>
+                      <!--<li><a href="#">Features</a></li>-->
+                      <li><a href="#how-it-works">About</a></li>
+                      <li><a href="#faqSection">FAQ</a></li>
+                  </ul>
+              </nav>
+              <p class="copy">&copy; 2023 Paayj. All rights reserved.</p>
+          </div>
+          <div class="closer-2">
+              <!--<h4>Get the App</h4>-->
+              <div class="app-buttons">
                 <a href="#"><img src="images/cs-app-store.jpeg" alt="App Store"></a>
                 <a href="#"><img src="images/cs-google-play.png" alt="Google Play"></a>
-            </div>
-        
-        </div>
-    </footer>
+              </div>
+          
+          </div>
+      </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const hamburgerButton = document.getElementById("hamburger");
-            const mobileLinks = document.getElementById("mobileLinks");
-            mobileLinks.style.display = "none";
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const hamburgerButton = document.getElementById("hamburger");
+                const mobileLinks = document.getElementById("mobileLinks");
+                mobileLinks.style.display = "none";
 
-            // display mobileLinks if clicked
-            hamburgerButton.addEventListener("click", function (e) {
-                e.stopPropagation(); 
-                if (mobileLinks.style.display === "block" || mobileLinks.style.display === "") {
-                    mobileLinks.style.display = "none";
-                } else {
-                    mobileLinks.style.display = "block";
-                }
-            });
+                // display mobileLinks if clicked
+                hamburgerButton.addEventListener("click", function (e) {
+                    e.stopPropagation(); 
+                    if (mobileLinks.style.display === "block" || mobileLinks.style.display === "") {
+                        mobileLinks.style.display = "none";
+                    } else {
+                        mobileLinks.style.display = "block";
+                    }
+                });
 
-            // do not display if click off
-            document.addEventListener("click", function (e) {
-                if (mobileLinks.style.display === "block" && e.target !== mobileLinks) {
-                    mobileLinks.style.display = "none";
-                }
-            });
+                // do not display if click off
+                document.addEventListener("click", function (e) {
+                    if (mobileLinks.style.display === "block" && e.target !== mobileLinks) {
+                        mobileLinks.style.display = "none";
+                    }
+                });
 
-            const faqs = document.querySelectorAll(".faq");
+                const faqs = document.querySelectorAll(".faq");
 
-            faqs.forEach(function (faq) {
-                faq.addEventListener("click", function () {
-                    // Toggle the 'expanded' class on the clicked FAQ
-                    faq.classList.toggle("expanded");
+                faqs.forEach(function (faq) {
+                    faq.addEventListener("click", function () {
+                        // Toggle the 'expanded' class on the clicked FAQ
+                        faq.classList.toggle("expanded");
 
-                    // Toggle the arrow icon
-                    const arrow = faq.querySelector(".arrow");
-                    arrow.textContent = faq.classList.contains("expanded") ? "▼" : "▶";
+                        // Toggle the arrow icon
+                        const arrow = faq.querySelector(".arrow");
+                        arrow.textContent = faq.classList.contains("expanded") ? "▼" : "▶";
 
-                    // Toggle the answer visibility
-                    const answer = faq.querySelector(".answer");
-                    answer.style.display = faq.classList.contains("expanded") ? "block" : "none";
+                        // Toggle the answer visibility
+                        const answer = faq.querySelector(".answer");
+                        answer.style.display = faq.classList.contains("expanded") ? "block" : "none";
 
-                    const faqTitle = faq.querySelector(".faq-title");
-                    faqTitle.classList.toggle("expanded-padding");
+                        const faqTitle = faq.querySelector(".faq-title");
+                        faqTitle.classList.toggle("expanded-padding");
+                    });
+                });
+
+                const emailInput = document.getElementById("email");
+                const subscribe = document.getElementById("subscribe");
+                subscribe.addEventListener("click", function (e) { 
+                    e.preventDefault(); //stop page reloading
+                    submitXHRRequest();
+                    emailInput.value=""
+                });
+
+                emailInput.addEventListener("keydown", function (event) {
+                    // Check if the pressed key is Enter (key code 13)
+                    if (event.key === "Enter") {
+                        // Prevent the default form submission
+                        event.preventDefault();
+                        // Trigger the XHR request
+                        submitXHRRequest();
+                        emailInput.value=""
+                    }
                 });
             });
 
-            const emailInput = document.getElementById("email");
-            const subscribe = document.getElementById("subscribe");
-            subscribe.addEventListener("click", function (e) { 
-                e.preventDefault(); //stop page reloading
-                submitXHRRequest();
-                emailInput.value=""
+            function submitXHRRequest() {
+                const url = 'https://script.google.com/macros/s/AKfycbyW1n1j5vYy4rGz5tWcoO4_nOOCRbSTKhKZI7tnUOfm9dspYnJqgx4BJdQFOx8bEiRhSw/exec';
+                    const jsonData = {email: $("#email").val(),
+                };
+                console.log(jsonData)
+                // Convert the JavaScript object to a JSON string
+                const jsonString = JSON.stringify(jsonData);
+
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', url, true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        console.log('Success:', xhr.responseText);
+                    } else if (xhr.readyState == 4) {
+                        console.error('Error:', xhr.status);
+                    }
+                };
+
+                xhr.send(jsonString);
+                const thanks = document.getElementById("thanks")
+                thanks.style.display="block"
+
+            }
+
+            // Get references to the step elements and images
+            const stepElements = document.querySelectorAll(".step");
+            const imageElements = document.querySelectorAll(".step-img img");
+
+            // Add click event listeners to the step elements
+            stepElements.forEach((step, index) => {
+            step.addEventListener("click", () => {
+                // Remove the "selected" class from all step elements
+                stepElements.forEach((s) => s.classList.remove("selected"));
+                
+                // Add the "selected" class to the clicked step
+                step.classList.add("selected");
+                
+                // Hide all images
+                imageElements.forEach((img) => img.style.display = "none");
+                
+                // Show the corresponding image based on the index
+                imageElements[index].style.display = "block";
+            });
             });
 
-            emailInput.addEventListener("keydown", function (event) {
-                // Check if the pressed key is Enter (key code 13)
-                if (event.key === "Enter") {
-                    // Prevent the default form submission
-                    event.preventDefault();
-                    // Trigger the XHR request
-                    submitXHRRequest();
-                    emailInput.value=""
-                }
-            });
-        });
+            // By default, select the first step
+            stepElements[0].classList.add("selected");
+            imageElements[0].style.display = "block";
 
-        function submitXHRRequest() {
-            const url = 'https://script.google.com/macros/s/AKfycbyW1n1j5vYy4rGz5tWcoO4_nOOCRbSTKhKZI7tnUOfm9dspYnJqgx4BJdQFOx8bEiRhSw/exec';
-                const jsonData = {email: $("#email").val(),
-            };
-            console.log(jsonData)
-            // Convert the JavaScript object to a JSON string
-            const jsonString = JSON.stringify(jsonData);
+        </script>
+        
 
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', url, true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    console.log('Success:', xhr.responseText);
-                } else if (xhr.readyState == 4) {
-                    console.error('Error:', xhr.status);
-                }
-            };
-
-            xhr.send(jsonString);
-            const thanks = document.getElementById("thanks")
-            thanks.style.display="block"
-
-        }
-
-        // Get references to the step elements and images
-        const stepElements = document.querySelectorAll(".step");
-        const imageElements = document.querySelectorAll(".step-img img");
-
-        // Add click event listeners to the step elements
-        stepElements.forEach((step, index) => {
-        step.addEventListener("click", () => {
-            // Remove the "selected" class from all step elements
-            stepElements.forEach((s) => s.classList.remove("selected"));
-            
-            // Add the "selected" class to the clicked step
-            step.classList.add("selected");
-            
-            // Hide all images
-            imageElements.forEach((img) => img.style.display = "none");
-            
-            // Show the corresponding image based on the index
-            imageElements[index].style.display = "block";
-        });
-        });
-
-        // By default, select the first step
-        stepElements[0].classList.add("selected");
-        imageElements[0].style.display = "block";
-
-    </script>
-    
-
-</body>
+    </body>
 </html>

@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paayj</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,200,300,600,900&family=Source+Sans+Pro:wght@100,400,700&display=swap' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/Logo-Dark.png" alt="Logo">
+        </div>
+                
+        <nav class="desktop-nav">
+            <ul>
+                <!--<li><a href="#">Features</a></li>-->
+                <!--<li><a href="#">Pricing</a></li>-->
+                <li><a href="#faqSection">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-nav">
+            <button class="hamburger" id="hamburger">&#9776;</button>
+            <div class="mobile-links" id="mobileLinks">
+                <ul>
+                    <!--<li><a href="#">Features</a></li>-->
+                    <!--<li><a href="#">Pricing</a></li>-->
+                    <li><a href="#faqSection">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="app-buttons-1">
+            <a href="#"><img src="images/cs-app-store.jpeg" alt="App Store"></a>
+            <a href="#"><img src="images/cs-google-play.png" alt="Google Play"></a>
+        </div>
+
+    </header>
+    <div class="main-1">
+        <div class="email-capture">
+            <h1 style="font-family: 'Montserrat Alternates', sans-serif;">the smoothest way to split bills</h1>
+            <p class="text-1">Paayj let's you temporarily combine cards to split purchases <b style="font-weight: 600;">for free</b>. Select your debit cards, credit cards, and even invite friends to Paayj with you!</p>
+            <p class="text-2">Paayj is coming soon! 🚀 Sign up to stay in the loop.</p>
+
+            <form class="email-form">
+                <input name="email" type="text" id="email"  placeholder="Enter your email" autocomplete="email">
+                <button  id="subscribe" type="submit">Subscribe ➜</button>
+                <p id="thanks" style="display: none;">Thanks you! Your submission has been received</p>
+            </form>
+        </div>
+        <div class="graphic">
+            <img src="images/how-to.png" alt="Graphic Image">
+        </div>
+    </div>
+
+    <div class="main-4">
+        <div class="screen" id="mainpage">
+
+        </div>
+        <div class="screen" id="createGroupPage">
+
+        </div>
+        <div class="screen" id="joinRequest">
+
+        </div>
+        <div class="screen" id="mobileWalletCard">
+
+        </div>
+    </div>
+
+    <!--
+    <div class="main-2">
+        <div class="step-text">
+            <h1>Split with your Friends!</h1>
+            <h3 class="step" id="step-1">Step 1: Create a new split</h3>
+            <h3 class="step" id="step-2">Step 2: Send your friends a request to join your new split</h3>
+            <h3 class="step" id="step-3">Step 3: Pay with Paayj!</h3>
+            <p class="text-6">Make a group, add your friends, and start splitting</p>
+            <p class="text-7"><em>It's as easy as that</em></p>
+        </div>
+        <div class="step-img">
+            <img id="step-1-img" src="images/create-split.png" alt="Graphic Image 1">
+            <img id="step-2-img" src="images/send-request.png" alt="Graphic Image 2">
+            <img id="step-3-img" src="images/pay.png" alt="Graphic Image 3">
+        </div>
+    </div>
+-->
+
+
+
+    <div class="main-3" id="faqSection">
+        <div class="faq">
+            <div class="faq-title">
+                <h2 class="question">How does Paayj work?</h2>
+                <div class="arrow">▶</div>
+            </div>
+            <p class="answer">After you create a split group, we upload a virtual card to your mobile wallet. We use our magic to split the bill and automatically charge every card in the group their fair share- instantly. Create a group in the app, tap your Paayj card, and we automatically split the bill. No one fronts any money. No preloading, transfering, or losing money!</p>
+        </div>
+        <div class="faq">
+            <div class="faq-title">
+                <h2 class="question">Does everyone in my group need to have the app?</h2>
+                <div class="arrow">▶</div>
+            </div>
+            <p class="answer">Nope! You can send your friends a web link that allows them to quickly link their card</p>
+        </div>
+        <div class="faq">
+            <div class="faq-title">
+                <h2 class="question">Where can i use my Paayj card?</h2>
+                <div class="arrow">▶</div>
+            </div>
+            <p class="answer">Anywhere in the world that accepts Visa!</p>
+        </div>
+        <div class="faq">
+            <div class="faq-title">
+                <h2 class="question">How do I invite others to join a payment group or transaction?</h2>
+                <div class="arrow">▶</div>
+            </div>
+            <p class="answer">You can simply send your friends a link to join or if you both have the paayj app you can tap your phones together to be added the a group</p>
+        </div>
+        <div class="faq">
+            <div class="faq-title">
+                <h2 class="question">Will I have one card in my mobile wallet for each group I am in?</h2>
+                <div class="arrow">▶</div>
+            </div>
+            <p class="answer">No! You will only have one Paayj card in your mobile wallet. What group is active on the card can be controlled from the app.</p>
+        </div>
+    </div>
+    <footer class="closer">
+        <div class="closer-1">
+            <img src="images/Logo-TextOnly-Light.png" alt="Logo">
+            <nav class="desktop-nav-1">
+                <ul>
+                    <!--<li><a href="#">Features</a></li>-->
+                    <!--<li><a href="#">Pricing</a></li>-->
+                    <li><a href="#faqSection">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <p class="copy">&copy; 2023 Paayj. All rights reserved.</p>
+        </div>
+        <div class="closer-2">
+            <!--
+            <h4>Get the App</h4>-->
+            <div class="app-buttons">
+                <a href="#"><img src="images/cs-app-store.jpeg" alt="App Store"></a>
+                <a href="#"><img src="images/cs-google-play.png" alt="Google Play"></a>
+            </div>
+        
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburgerButton = document.getElementById("hamburger");
+            const mobileLinks = document.getElementById("mobileLinks");
+            mobileLinks.style.display = "none";
+
+            // display mobileLinks if clicked
+            hamburgerButton.addEventListener("click", function (e) {
+                e.stopPropagation(); 
+                if (mobileLinks.style.display === "block" || mobileLinks.style.display === "") {
+                    mobileLinks.style.display = "none";
+                } else {
+                    mobileLinks.style.display = "block";
+                }
+            });
+
+            // do not display if click off
+            document.addEventListener("click", function (e) {
+                if (mobileLinks.style.display === "block" && e.target !== mobileLinks) {
+                    mobileLinks.style.display = "none";
+                }
+            });
+
+            const faqs = document.querySelectorAll(".faq");
+
+            faqs.forEach(function (faq) {
+                faq.addEventListener("click", function () {
+                    // Toggle the 'expanded' class on the clicked FAQ
+                    faq.classList.toggle("expanded");
+
+                    // Toggle the arrow icon
+                    const arrow = faq.querySelector(".arrow");
+                    arrow.textContent = faq.classList.contains("expanded") ? "▼" : "▶";
+
+                    // Toggle the answer visibility
+                    const answer = faq.querySelector(".answer");
+                    answer.style.display = faq.classList.contains("expanded") ? "block" : "none";
+
+                    const faqTitle = faq.querySelector(".faq-title");
+                    faqTitle.classList.toggle("expanded-padding");
+                });
+            });
+
+            const emailInput = document.getElementById("email");
+            const subscribe = document.getElementById("subscribe");
+            subscribe.addEventListener("click", function (e) { 
+                e.preventDefault(); //stop page reloading
+                submitXHRRequest();
+                emailInput.value=""
+            });
+
+            emailInput.addEventListener("keydown", function (event) {
+                // Check if the pressed key is Enter (key code 13)
+                if (event.key === "Enter") {
+                    // Prevent the default form submission
+                    event.preventDefault();
+                    // Trigger the XHR request
+                    submitXHRRequest();
+                    emailInput.value=""
+                }
+            });
+        });
+
+        function submitXHRRequest() {
+            const url = 'https://script.google.com/macros/s/AKfycbyW1n1j5vYy4rGz5tWcoO4_nOOCRbSTKhKZI7tnUOfm9dspYnJqgx4BJdQFOx8bEiRhSw/exec';
+                const jsonData = {email: $("#email").val(),
+            };
+            console.log(jsonData)
+            // Convert the JavaScript object to a JSON string
+            const jsonString = JSON.stringify(jsonData);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log('Success:', xhr.responseText);
+                } else if (xhr.readyState == 4) {
+                    console.error('Error:', xhr.status);
+                }
+            };
+
+            xhr.send(jsonString);
+            const thanks = document.getElementById("thanks")
+            thanks.style.display="block"
+
+        }
+
+        // Get references to the step elements and images
+        const stepElements = document.querySelectorAll(".step");
+        const imageElements = document.querySelectorAll(".step-img img");
+
+        // Add click event listeners to the step elements
+        stepElements.forEach((step, index) => {
+        step.addEventListener("click", () => {
+            // Remove the "selected" class from all step elements
+            stepElements.forEach((s) => s.classList.remove("selected"));
+            
+            // Add the "selected" class to the clicked step
+            step.classList.add("selected");
+            
+            // Hide all images
+            imageElements.forEach((img) => img.style.display = "none");
+            
+            // Show the corresponding image based on the index
+            imageElements[index].style.display = "block";
+        });
+        });
+
+        // By default, select the first step
+        stepElements[0].classList.add("selected");
+        imageElements[0].style.display = "block";
+
+    </script>
+    
+
+</body>
+</html>
